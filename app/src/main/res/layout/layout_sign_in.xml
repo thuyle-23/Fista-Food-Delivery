@@ -15,7 +15,7 @@
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/drawable_google"
         android:fontFamily="@font/inter_bold"
-        android:text="Sign In with Google"
+        android:text="@string/btn_google"
         android:textAllCaps="false"
         android:textColor="@color/mainGray"
         app:cornerRadius="20dp"
@@ -30,7 +30,7 @@
         android:layout_marginTop="440dp"
         android:backgroundTint="@color/aquaBlue"
         android:fontFamily="@font/inter_bold"
-        android:text="Sign In with Facebook"
+        android:text="@string/btn_facebook"
         android:textAllCaps="false"
         app:cornerRadius="20dp"
         app:strokeColor="@color/aquaBlue"
@@ -43,7 +43,7 @@
         android:layout_marginLeft="47dp"
         android:layout_marginTop="550dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Đăng nhập bằng cách nhập số điện thoại"
+        android:text="@string/label_phoneNumber1"
         android:textColor="@color/mainPurple"
         android:textSize="16sp" />
 </RelativeLayout>

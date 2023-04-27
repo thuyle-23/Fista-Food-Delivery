@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">FoodDelivery</string>
+    <string name="label_phoneNumber">Nhập số điện thoại để tiếp tục</string>
+    <string name="helper_otp">Mã xác nhận sẽ được gửi qua số điện thoại này</string>
+    <string name="btn_google">Sign In with Google</string>
+    <string name="btn_facebook">Sign In with Facebook</string>
+    <string name="label_phoneNumber1">Đăng nhập bằng cách nhập số điện thoại</string>
+    <string name="placeholder_phoneNumber">Số điện thoại</string>
+    <string name="label_password">Nhập mật khẩu</string>
+    <string name="helper_phoneNumber2">Số điện thoại dùng đăng ký là </string>
+    <string name="placeholder_password">Mật khẩu</string>
+    <string name="label_forgotpassword">Quên mật khẩu?</string>
+
+    <string name="btnNext">TIẾP THEO</string>
+    <string name="btnSignIn">ĐĂNG NHẬP</string>
 </resources>
