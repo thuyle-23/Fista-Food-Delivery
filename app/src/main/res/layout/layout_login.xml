@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/txtInstruct1"
-        android:layout_width="334dp"
+        android:layout_width="360dp"
         android:layout_height="32dp"
         android:layout_marginLeft="38dp"
         android:layout_marginTop="317dp"
@@ -39,7 +39,7 @@
         app:srcCompat="@drawable/icon_back" />
 
     <EditText
-        android:id="@+id/text"
+        android:id="@+id/txtphoneNumber"
         android:layout_width="336dp"
         android:layout_height="48dp"
         android:layout_marginLeft="38dp"
@@ -52,7 +52,7 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnGetOTP"
         android:layout_width="336dp"
         android:layout_height="55dp"
         android:layout_marginLeft="38dp"

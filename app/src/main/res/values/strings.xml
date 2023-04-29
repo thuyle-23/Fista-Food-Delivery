@@ -10,7 +10,12 @@
     <string name="helper_phoneNumber2">Số điện thoại dùng đăng ký là </string>
     <string name="placeholder_password">Mật khẩu</string>
     <string name="label_forgotpassword">Quên mật khẩu?</string>
+    <string name="label_otpconfirm">Mã OTP xác nhận</string>
+    <string name="helper_otpconfirm">Hãy điền OTP gồm 6 số vừa được gửi đến số</string>
+    <string name="helper_notreceiveotp">Không nhận được mã?</string>
+    <string name="label_resendotp">Gửi lại mã</string>
 
     <string name="btnNext">TIẾP THEO</string>
     <string name="btnSignIn">ĐĂNG NHẬP</string>
+    <string name="btnConfirm">XÁC NHẬN</string>
 </resources>
