@@ -7,13 +7,16 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,7 @@ public class DashboardActivity extends AppCompatActivity {
     private ImageAdapter adapter;
     private Handler sliderHandler = new Handler();
     private ListView listItemFood;
-
+    private ImageView imageView;
     private ArrayList<FoodItem> foodItemArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,18 @@ public class DashboardActivity extends AppCompatActivity {
         CreateSlider();
         AssignFoodFist();
 
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openAccountPage();
+            }
+        });
     }
-
+    public void openAccountPage(){
+        Intent intent = new Intent(DashboardActivity.this, Account.class);
+        startActivity(intent);
+    }
     private Runnable sliderRunnable = new Runnable() {
         @Override
         public void run() {
