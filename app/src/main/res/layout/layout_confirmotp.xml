@@ -19,14 +19,22 @@
         android:textSize="23sp" />
     <TextView
         android:id="@+id/txtInstruct2"
-        android:layout_width="329dp"
-        android:layout_height="20dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="38dp"
         android:layout_marginTop="364dp"
         android:fontFamily="@font/inter_medium"
         android:text="@string/helper_otpconfirm"
         android:textColor="@color/mainGray"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/txtphoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="390dp"
+        android:fontFamily="@font/inter_bold"
+        android:textColor="@color/black"
         android:textSize="14sp" />
 
     <EditText

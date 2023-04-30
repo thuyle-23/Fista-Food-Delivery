@@ -38,18 +38,34 @@
         android:layout_marginTop="50dp"
         app:srcCompat="@drawable/icon_back" />
 
-    <EditText
-        android:id="@+id/txtphoneNumber"
+    <LinearLayout
         android:layout_width="336dp"
         android:layout_height="48dp"
-        android:layout_marginLeft="38dp"
+        android:layout_marginStart="38dp"
         android:layout_marginTop="405dp"
         android:background="@drawable/edittext_border_purple"
-        android:fontFamily="@font/inter_medium"
-        android:hint="@string/placeholder_phoneNumber"
-        android:inputType="number"
-        android:paddingLeft="18dp"
-        android:textSize="14sp" />
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:fontFamily="@font/inter_bold"
+            android:paddingLeft="18dp"
+            android:text="@string/_84"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/txtphoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@null"
+            android:fontFamily="@font/inter_medium"
+            android:hint="@string/placeholder_phoneNumber"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:textSize="16sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnGetOTP"
@@ -61,5 +77,6 @@
         android:fontFamily="@font/inter_bold"
         android:text="@string/btnNext"
         app:cornerRadius="8dp"
-        app:strokeColor="@color/mainPurple" />
+        app:strokeColor="@color/mainPurple"
+        android:enabled="false"/>
 </RelativeLayout>
