@@ -6,7 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ConfirmOTP">
     <include layout="@layout/first_toolbar"/>
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/icon_back" />
     <TextView
         android:id="@+id/txtInstruct3"
         android:layout_width="334dp"
