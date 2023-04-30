@@ -18,6 +18,7 @@
         android:text="@string/btn_google"
         android:textAllCaps="false"
         android:textColor="@color/mainGray"
+        android:textSize="16sp"
         app:cornerRadius="20dp"
         app:strokeColor="@color/mainPurple"
         app:strokeWidth="1dp" />
@@ -29,12 +30,13 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="440dp"
         android:backgroundTint="@color/aquaBlue"
+        android:drawableLeft="@drawable/drawable_facebook"
         android:fontFamily="@font/inter_bold"
         android:text="@string/btn_facebook"
         android:textAllCaps="false"
+        android:textSize="16sp"
         app:cornerRadius="20dp"
-        app:strokeColor="@color/aquaBlue"
-        android:drawableLeft="@drawable/drawable_facebook"/>
+        app:strokeColor="@color/aquaBlue" />
 
     <TextView
         android:id="@+id/txtPhoneNumber"
