@@ -52,12 +52,12 @@ public class AdapterFoodItem extends BaseAdapter {
         TextView quantity_food = view.findViewById(R.id.quantity_food);
         TextView distance_shop = view.findViewById(R.id.distance_shop);
 
-        image_food_item.setImageResource(foodItem.getImage_item_shop());
-        name_shop.setText(foodItem.getName_shop());
-        type_of_food.setText(foodItem.getType_of_food());
-        num_star.setText(foodItem.getNum_star());
-        quantity_food.setText(foodItem.getQuantity_food());
-        distance_shop.setText(foodItem.getDistance_shop());
+        image_food_item.setImageResource(foodItem.getImageItemShop());
+        name_shop.setText(foodItem.getNameShop());
+        type_of_food.setText(foodItem.getTypeOfFood());
+        num_star.setText(foodItem.getNumStar());
+        quantity_food.setText(foodItem.getQuantityFood());
+        distance_shop.setText(foodItem.getDistanceShop());
         return view;
     }
 }

@@ -20,80 +20,27 @@ import java.util.List;
 
 
 public class DashboardActivity extends AppCompatActivity {
-    private ViewPager2 viewPager2;
+    private ViewPager2 sliderScreen;
     private List<Image> imageList;
     private ImageAdapter adapter;
     private Handler sliderHandler = new Handler();
-    private ListView list_item_food;
+    private ListView listItemFood;
 
-    private ArrayList<FoodItem> arr;
+    private ArrayList<FoodItem> foodItemArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_dashboard);
 
-        arr = new ArrayList<FoodItem>();
-        AdapterFoodItem adapterFoodItem;
-        list_item_food = findViewById(R.id.list_item_food);
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
-        arr.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+        CreateSlider();
+        AssignFoodFist();
 
-
-        adapterFoodItem = new AdapterFoodItem(DashboardActivity.this,R.layout.item_foods,arr);
-        list_item_food.setAdapter(adapterFoodItem);
-        setListViewHeightBasedOnChildren(list_item_food);
-
-        viewPager2 = findViewById(R.id.viewPager2);
-
-        imageList = new ArrayList<>();
-        imageList.add(new Image(R.drawable.test2));
-        imageList.add(new Image(R.drawable.test2));
-        imageList.add(new Image(R.drawable.test2));
-
-        adapter = new ImageAdapter(imageList,viewPager2);
-        viewPager2.setAdapter(adapter);
-
-        viewPager2.setOffscreenPageLimit(3);
-        viewPager2.setClipChildren(false);
-        viewPager2.setClipToPadding(false);
-
-        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-        CompositePageTransformer transformer = new CompositePageTransformer();
-        transformer.addTransformer(new MarginPageTransformer(12));
-        transformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float r= 1 - Math.abs(position);
-                page.setScaleY(0.85f + r + 0.14f);
-            }
-        });
-
-        viewPager2.setPageTransformer(transformer);
-
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable,2000);
-            }
-        });
     }
 
     private Runnable sliderRunnable = new Runnable() {
         @Override
         public void run() {
-            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+            sliderScreen.setCurrentItem(sliderScreen.getCurrentItem() + 1);
         }
     };
 
@@ -107,6 +54,61 @@ public class DashboardActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         sliderHandler.postDelayed(sliderRunnable,2000);
+    }
+
+    public void AssignFoodFist() {
+        foodItemArrayList = new ArrayList<FoodItem>();
+        AdapterFoodItem adapterFoodItem;
+        listItemFood = findViewById(R.id.list_item_food);
+
+        foodItemArrayList.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+        foodItemArrayList.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+        foodItemArrayList.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+        foodItemArrayList.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+        foodItemArrayList.add(new FoodItem(R.drawable.food_test,"Quán Ông Tám - Lẩu Nướng Bình Dân","Cà phê sữa","5.0","(15+)","1.2 km"));
+
+        adapterFoodItem = new AdapterFoodItem(DashboardActivity.this,R.layout.item_foods, foodItemArrayList);
+        listItemFood.setAdapter(adapterFoodItem);
+        setListViewHeightBasedOnChildren(listItemFood);
+    }
+
+    public void CreateSlider() {
+        sliderScreen = findViewById(R.id.viewPager2);
+
+        imageList = new ArrayList<>();
+        imageList.add(new Image(R.drawable.test2));
+        imageList.add(new Image(R.drawable.test2));
+        imageList.add(new Image(R.drawable.test2));
+
+        adapter = new ImageAdapter(imageList, sliderScreen);
+        sliderScreen.setAdapter(adapter);
+
+        sliderScreen.setOffscreenPageLimit(3);
+        sliderScreen.setClipChildren(false);
+        sliderScreen.setClipToPadding(false);
+
+        sliderScreen.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer transformer = new CompositePageTransformer();
+        transformer.addTransformer(new MarginPageTransformer(12));
+        transformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r= 1 - Math.abs(position);
+                page.setScaleY(0.85f + r + 0.14f);
+            }
+        });
+
+        sliderScreen.setPageTransformer(transformer);
+
+        sliderScreen.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable,2000);
+            }
+        });
     }
 
     public void setListViewHeightBasedOnChildren(ListView listView) {

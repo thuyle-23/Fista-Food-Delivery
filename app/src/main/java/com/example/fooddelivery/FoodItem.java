@@ -1,69 +1,67 @@
 package com.example.fooddelivery;
 
-import android.widget.ImageView;
-
 public class FoodItem {
-    private int image_item_shop;
-    private String name_shop;
-    private String type_of_food;
-    private String num_star;
-    private String quantity_food;
-    private String distance_shop;
+    private int imageItemShop;
+    private String nameShop;
+    private String typeOfFood;
+    private String numStar;
+    private String quantityFood;
+    private String distanceShop;
 
-    public FoodItem(int image_item_shop, String name_shop, String type_of_food, String num_star, String quantity_food, String distance_shop) {
-        this.image_item_shop = image_item_shop;
-        this.name_shop = name_shop;
-        this.type_of_food = type_of_food;
-        this.num_star = num_star;
-        this.quantity_food = quantity_food;
-        this.distance_shop = distance_shop;
+    public FoodItem(int imageItemShop, String nameShop, String typeOfFood, String numStar, String quantityFood, String distanceShop) {
+        this.imageItemShop = imageItemShop;
+        this.nameShop = nameShop;
+        this.typeOfFood = typeOfFood;
+        this.numStar = numStar;
+        this.quantityFood = quantityFood;
+        this.distanceShop = distanceShop;
     }
 
-    public int getImage_item_shop() {
-        return image_item_shop;
+    public int getImageItemShop() {
+        return imageItemShop;
     }
 
-    public void setImage_item_shop(int image_item_shop) {
-        this.image_item_shop = image_item_shop;
+    public void setImageItemShop(int imageItemShop) {
+        this.imageItemShop = imageItemShop;
     }
 
-    public String getName_shop() {
-        return name_shop;
+    public String getNameShop() {
+        return nameShop;
     }
 
-    public void setName_shop(String name_shop) {
-        this.name_shop = name_shop;
+    public void setNameShop(String nameShop) {
+        this.nameShop = nameShop;
     }
 
-    public String getType_of_food() {
-        return type_of_food;
+    public String getTypeOfFood() {
+        return typeOfFood;
     }
 
-    public void setType_of_food(String type_of_food) {
-        this.type_of_food = type_of_food;
+    public void setTypeOfFood(String typeOfFood) {
+        this.typeOfFood = typeOfFood;
     }
 
-    public String getNum_star() {
-        return num_star;
+    public String getNumStar() {
+        return numStar;
     }
 
-    public void setNum_star(String num_star) {
-        this.num_star = num_star;
+    public void setNumStar(String numStar) {
+        this.numStar = numStar;
     }
 
-    public String getQuantity_food() {
-        return quantity_food;
+    public String getQuantityFood() {
+        return quantityFood;
     }
 
-    public void setQuantity_food(String quantity_food) {
-        this.quantity_food = quantity_food;
+    public void setQuantityFood(String quantityFood) {
+        this.quantityFood = quantityFood;
     }
 
-    public String getDistance_shop() {
-        return distance_shop;
+    public String getDistanceShop() {
+        return distanceShop;
     }
 
-    public void setDistance_shop(String distance_shop) {
-        this.distance_shop = distance_shop;
+    public void setDistanceShop(String distanceShop) {
+        this.distanceShop = distanceShop;
     }
 }
