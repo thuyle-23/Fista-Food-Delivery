@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include layout="@layout/first_toolbar"/>
+
+    <include layout="@layout/first_toolbar" />
 
     <Button
         android:id="@+id/btnGoogle"
@@ -15,7 +16,7 @@
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/drawable_google"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/btn_google"
+        android:text="Sign In with Google"
         android:textAllCaps="false"
         android:textColor="@color/mainGray"
         app:cornerRadius="20dp"
@@ -30,7 +31,7 @@
         android:layout_marginTop="440dp"
         android:backgroundTint="@color/aquaBlue"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/btn_facebook"
+        android:text="Sign In with Facebook"
         android:textAllCaps="false"
         app:cornerRadius="20dp"
         app:strokeColor="@color/aquaBlue"
@@ -43,7 +44,7 @@
         android:layout_marginLeft="47dp"
         android:layout_marginTop="550dp"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/label_phoneNumber1"
+        android:text="Đăng nhập bằng cách nhập số điện thoại"
         android:textColor="@color/mainPurple"
         android:textSize="16sp" />
 </RelativeLayout>

@@ -1,13 +1,14 @@
 package com.example.fooddelivery;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-public class Account extends AppCompatActivity {
+public class Orders extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_account);
+        setContentView(R.layout.layout_orders);
     }
 }
