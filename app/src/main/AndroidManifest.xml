@@ -35,10 +35,10 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".SignIn"
+            android:name=".DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".DashboardActivity"
+            android:name=".SignIn"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

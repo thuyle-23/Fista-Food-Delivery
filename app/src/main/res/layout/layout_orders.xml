@@ -54,7 +54,7 @@
         android:layout_height="452dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="128dp"
-        android:backgroundTine="@color/white"
+        android:backgroundTint="@color/white"
         android:background="@drawable/drawable_roundstyle"
         />
 
