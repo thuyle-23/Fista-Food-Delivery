@@ -1,24 +1,40 @@
 package com.example.fooddelivery;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class ConfirmOTP extends AppCompatActivity {
 
     private EditText txtinputCode1, txtinputCode2, txtinputCode3, txtinputCode4, txtinputCode5, txtinputCode6;
-
+    private String verificationId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_confirmotp);
 
         TextView txtphoneNumber = findViewById(R.id.txtphoneNumber);
-        txtphoneNumber.setText(String.format("+84-%s", getIntent().getStringExtra("mobile")));
+        txtphoneNumber.setText(String.format("+84%s", getIntent().getStringExtra("mobile")));
 
         txtinputCode1 = findViewById(R.id.txtinputCode1);
         txtinputCode2 = findViewById(R.id.txtinputCode2);
@@ -28,6 +44,73 @@ public class ConfirmOTP extends AppCompatActivity {
         txtinputCode6 = findViewById(R.id.txtinputCode6);
 
         setupOTPInputs();
+
+        final ProgressBar progressBar = findViewById(R.id.progressBar);
+        final Button btnGetOTP = findViewById(R.id.btnGetOTP);
+        verificationId = getIntent().getStringExtra("verificationId");
+
+        btnGetOTP.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(txtinputCode1.getText().toString().trim().isEmpty()
+                        || txtinputCode2.getText().toString().trim().isEmpty()
+                        || txtinputCode3.getText().toString().trim().isEmpty()
+                        || txtinputCode4.getText().toString().trim().isEmpty()
+                        || txtinputCode5.getText().toString().trim().isEmpty()
+                        || txtinputCode6.getText().toString().trim().isEmpty()){
+                    Toast.makeText(ConfirmOTP.this,"Hãy nhập mã xác nhận OTP", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String code = txtinputCode1.getText().toString() +
+                        txtinputCode2.getText().toString() +
+                        txtinputCode3.getText().toString() +
+                        txtinputCode4.getText().toString() +
+                        txtinputCode5.getText().toString() +
+                        txtinputCode6.getText().toString();
+
+                if(verificationId != null){
+                    progressBar.setVisibility(View.VISIBLE);
+                    btnGetOTP.setVisibility(View.INVISIBLE);
+                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, code);
+                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task){
+                            progressBar.setVisibility(View.GONE);
+                            btnGetOTP.setVisibility(View.VISIBLE);
+                            if(task.isSuccessful()){
+                                Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(ConfirmOTP.this,"Mã xác nhận OTP không hợp lệ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                }
+            }
+        });
+        findViewById(R.id.txtResendOTP).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                PhoneAuthProvider.getInstance().verifyPhoneNumber("+84" + getIntent().getStringExtra("mobile"), 60, TimeUnit.SECONDS,
+                        ConfirmOTP.this,
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                            @Override
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential){}
+                            @Override
+                            public void onVerificationFailed(@NonNull FirebaseException e){
+                                Toast.makeText(ConfirmOTP.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+
+                            @Override
+                            public void onCodeSent(@NonNull String newVerificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                verificationId = newVerificationId;
+                                Toast.makeText(ConfirmOTP.this, "Mã xác nhận OTP được gửi thành công", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                );
+            }
+        });
     }
 
     private void setupOTPInputs() {

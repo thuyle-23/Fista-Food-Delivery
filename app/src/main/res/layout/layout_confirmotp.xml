@@ -146,7 +146,7 @@
         android:textSize="14sp" />
 
     <TextView
-        android:id="@+id/txtInstruct5"
+        android:id="@+id/txtResendOTP"
         android:layout_width="100dp"
         android:layout_height="20dp"
         android:layout_marginStart="195dp"
@@ -155,16 +155,26 @@
         android:text="@string/label_resendotp"
         android:textColor="@color/mainGray"
         android:textSize="14sp" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnGetOTP"
+            android:layout_width="336dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="715dp"
+            android:backgroundTint="@color/mainPurple"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/btnConfirm"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/mainPurple" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+</FrameLayout>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="336dp"
-        android:layout_height="55dp"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="715dp"
-        android:backgroundTint="@color/mainPurple"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/btnConfirm"
-        app:cornerRadius="8dp"
-        app:strokeColor="@color/mainPurple" />
 </RelativeLayout>
