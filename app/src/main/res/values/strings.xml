@@ -19,4 +19,26 @@
     <string name="btnSignIn">ĐĂNG NHẬP</string>
     <string name="btnConfirm">XÁC NHẬN</string>
     <string name="_84">+84 -</string>
+    <string name="nameRestaurant">Quán Ông Tám - Lẩu Nướng Bình Dân</string>
+    <string name="nameFood">Cà phê sữa</string>
+    <string name="tempPrice">31,550đ</string>
+    <string name="size_drink">Size M</string>
+    <string name="_7_000">7,000đ</string>
+    <string name="nameAddBar">Thêm món mới</string>
+    <string name="_31_550">31,550đ</string>
+    <string name="chooseSize">Chọn size (Chọn 1)</string>
+    <string name="chooseIceLevel">Chọn mức đá (Chọn 1)</string>
+    <string name="chooseTopping">Topping (Tối đa 10)</string>
+    <string name="userNote">Ghi chú cho quán</string>
+    <string name="standardDelivery">Giao hàng tiêu chuẩn</string>
+    <string name="timeDelivery">Dự kiến giao lúc 17:40</string>
+    <string name="textChange">Thay đổi</string>
+    <string name="loadMore">Xem thêm</string>
+    <string name="viewRating">Xem đánh giá</string>
+    <string name="_15_comments">(15+ Bình luận)</string>
+    <string name="statueTemp">Có gì ngon?</string>
+    <string name="_5_loadmore">XEM THÊM (+5)</string>
+    <string name="tocoto_brand">TocoToco - Tân Lập</string>
+    <string name="_20_time">20 phút</string>
+    <string name="calDistance">2.7 km</string>
 </resources>
