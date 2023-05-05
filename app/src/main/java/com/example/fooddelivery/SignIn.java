@@ -25,5 +25,6 @@ public class SignIn extends AppCompatActivity {
     public void openLoginPage(){
         Intent intent = new Intent(SignIn.this, Login.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

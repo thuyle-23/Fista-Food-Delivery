@@ -11,7 +11,7 @@
         android:id="@+id/btnGoogle"
         android:layout_width="312dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="370dp"
         android:backgroundTint="@color/white"
         android:drawableLeft="@drawable/drawable_google"
@@ -22,13 +22,15 @@
         android:textSize="16sp"
         app:cornerRadius="20dp"
         app:strokeColor="@color/mainPurple"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="1dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnFacebook"
         android:layout_width="312dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="50dp"
+        android:layout_alignStart="@+id/btnGoogle"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="440dp"
         android:backgroundTint="@color/aquaBlue"
         android:drawableLeft="@drawable/drawable_facebook"
@@ -41,12 +43,14 @@
 
     <TextView
         android:id="@+id/txtPhoneNumber"
-        android:layout_width="319dp"
+        android:layout_width="wrap_content"
         android:layout_height="21dp"
-        android:layout_marginLeft="47dp"
+        android:layout_alignStart="@+id/btnFacebook"
+        android:layout_marginStart="0dp"
         android:layout_marginTop="550dp"
         android:fontFamily="@font/inter_bold"
         android:text="@string/label_phoneNumber1"
         android:textColor="@color/mainPurple"
         android:textSize="16sp" />
+
 </RelativeLayout>

@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class Login extends AppCompatActivity {
 
     private EditText txtphoneNumber;
     private Button btnGetOTP;
+    private ImageView imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,7 @@ public class Login extends AppCompatActivity {
 
         txtphoneNumber = findViewById(R.id.txtphoneNumber);
         btnGetOTP = findViewById(R.id.btnGetOTP);
+        imgBack = findViewById(R.id.imgBack);
 
         final ProgressBar progressBar = findViewById(R.id.progressBar);
 
@@ -75,6 +78,13 @@ public class Login extends AppCompatActivity {
 );
             }
         });
+        imgBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                backToSignInPage();
+            }
+        });
+
     }
 
     private TextWatcher loginTextWatcher = new TextWatcher() {
@@ -92,4 +102,10 @@ public class Login extends AppCompatActivity {
 
         }
     };
+    public void backToSignInPage(){
+        Intent intent = new Intent(Login.this, SignIn.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
+    }
+
 }

@@ -7,7 +7,7 @@
     tools:context=".ConfirmOTP">
     <include layout="@layout/first_toolbar"/>
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="17dp"

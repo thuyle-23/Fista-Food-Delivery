@@ -1,10 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".OrdersActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="0dp"
+        android:translationZ="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
+            android:paddingHorizontal="14dp"
+            app:layout_scrollFlags="noScroll">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="17dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:src="@drawable/icon_back"
+                android:visibility="visible" />
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_shows_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:padding="1dp"
+                    android:text="Đơn hàng của tôi"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="false"
+                android:src="@drawable/icon_remove"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        app:layout_anchorGravity="bottom"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="714dp"
+                android:layout_height="752dp"
+                android:layout_marginLeft="-169dp"
+                android:layout_marginTop="-200dp"
+                app:srcCompat="@drawable/ellipse_6" />
+        </LinearLayout>
+
+    </ScrollView>
+
     <Button
         android:id="@+id/btnOrders"
         android:layout_width="139dp"
@@ -19,33 +99,6 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:cornerRadius="8dp" />
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="714dp"
-        android:layout_height="752dp"
-        android:layout_marginLeft="-169dp"
-        android:layout_marginTop="-376px"
-        app:srcCompat="@drawable/ellipse_6" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="50dp"
-        app:srcCompat="@drawable/icon_back" />
-
-    <TextView
-        android:id="@+id/txtMyOrders"
-        android:layout_width="150dp"
-        android:layout_height="25dp"
-        android:layout_marginLeft="130.74dp"
-        android:layout_marginTop="51dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="@string/myOrders"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp" />
 
 
     <LinearLayout
@@ -56,7 +109,7 @@
         android:layout_marginTop="128dp"
         android:backgroundTint="@color/white"
         android:background="@drawable/drawable_roundstyle"
-        >
+        />
 
     <ImageView
         android:id="@+id/imgOrders"
@@ -89,5 +142,4 @@
 your order yet"
         android:textColor="@color/black"
         android:textSize="12sp" />
-</LinearLayout>
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

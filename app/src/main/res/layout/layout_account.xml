@@ -13,7 +13,7 @@
         android:background="@color/mainPurple">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imgBack"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="17dp"
@@ -44,6 +44,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPersonalAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -83,7 +84,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/group"
+        android:id="@+id/groupOrders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -122,6 +123,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupRating"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -161,6 +163,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupLikeRestaurant"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -199,6 +202,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -237,6 +241,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupCouponWallet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -275,6 +280,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -313,6 +319,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupSupport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -351,6 +358,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupNotify"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -389,6 +397,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPolicies"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

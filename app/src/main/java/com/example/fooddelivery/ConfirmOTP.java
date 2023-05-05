@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,12 +29,16 @@ public class ConfirmOTP extends AppCompatActivity {
 
     private EditText txtinputCode1, txtinputCode2, txtinputCode3, txtinputCode4, txtinputCode5, txtinputCode6;
     private String verificationId;
+    private TextView txtphoneNumber;
+    private ImageView imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_confirmotp);
 
-        TextView txtphoneNumber = findViewById(R.id.txtphoneNumber);
+        imgBack = findViewById(R.id.imgBack);
+
+        txtphoneNumber = findViewById(R.id.txtphoneNumber);
         txtphoneNumber.setText(String.format("+84%s", getIntent().getStringExtra("mobile")));
 
         txtinputCode1 = findViewById(R.id.txtinputCode1);
@@ -109,6 +114,13 @@ public class ConfirmOTP extends AppCompatActivity {
                             }
                         }
                 );
+            }
+        });
+
+        imgBack.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                backToLoginPage();
             }
         });
     }
@@ -194,5 +206,10 @@ public class ConfirmOTP extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
             }
         });
+    }
+    public void backToLoginPage(){
+        Intent intent = new Intent(ConfirmOTP.this, Login.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
     }
 }

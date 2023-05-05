@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -28,8 +29,9 @@ public class DashboardActivity extends AppCompatActivity {
     private ImageAdapter adapter;
     private Handler sliderHandler = new Handler();
     private ListView listItemFood;
-    private ImageView imageView;
+    private ImageView imgMenuAccount;
     private ArrayList<FoodItem> foodItemArrayList;
+    private EditText txtFindFood;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,17 +40,29 @@ public class DashboardActivity extends AppCompatActivity {
         CreateSlider();
         AssignFoodFist();
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-        imageView.setOnClickListener(new View.OnClickListener(){
+        imgMenuAccount = (ImageView) findViewById(R.id.imgMenuAccount);
+        imgMenuAccount.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 openAccountPage();
+            }
+        });
+        txtFindFood.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openSearchPage();
             }
         });
     }
     public void openAccountPage(){
         Intent intent = new Intent(DashboardActivity.this, Account.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+    public void openSearchPage(){
+        Intent intent = new Intent(DashboardActivity.this, Account.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     private Runnable sliderRunnable = new Runnable() {
         @Override
