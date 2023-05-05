@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -42,7 +42,7 @@
         android:layout_marginLeft="130.74dp"
         android:layout_marginTop="51dp"
         android:fontFamily="@font/inter_bold"
-        android:text="Đơn hàng của tôi"
+        android:text="@string/myOrders"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="18sp" />
@@ -56,7 +56,7 @@
         android:layout_marginTop="128dp"
         android:backgroundTint="@color/white"
         android:background="@drawable/drawable_roundstyle"
-        />
+        >
 
     <ImageView
         android:id="@+id/imgOrders"
@@ -89,4 +89,5 @@
 your order yet"
         android:textColor="@color/black"
         android:textSize="12sp" />
-</RelativeLayout>
+</LinearLayout>
+</LinearLayout>

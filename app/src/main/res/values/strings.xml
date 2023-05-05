@@ -41,4 +41,16 @@
     <string name="tocoto_brand">TocoToco - Tân Lập</string>
     <string name="_20_time">20 phút</string>
     <string name="calDistance">2.7 km</string>
+    <string name="order_details">Chi tiết đơn hàng</string>
+    <string name="userName">Lê Trịnh Thanh Thúy</string>
+    <string name="accountInformation">THÔNG TIN TÀI KHOẢN</string>
+    <string name="ratings">Đánh giá</string>
+    <string name="likingRestaurant">Quán yêu thích</string>
+    <string name="addressBook">Sổ địa chỉ</string>
+    <string name="couponWallet">Ví Coupon</string>
+    <string name="paymentManagement">Quản lý thanh toán</string>
+    <string name="support">Hỗ trợ</string>
+    <string name="announcement">Thông báo</string>
+    <string name="policies">Điều khoản và chính sách</string>
+    <string name="myOrders">Đơn hàng của tôi</string>
 </resources>
