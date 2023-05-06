@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/first_toolbar"/>
+    <LinearLayout
+        android:layout_width="412dp"
+        android:layout_height="86dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="25dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/icon_back" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtMyAddress"
+        android:layout_width="99dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="Sửa địa chỉ"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imgLine"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="26dp"
+        android:background="@drawable/drawable_roundstyle"
+        android:layout_marginTop="89.5dp"
+        app:srcCompat="?attr/actionModeBackground" />
+    <TextView
+        android:id="@+id/txtAddress"
+        android:layout_width="46dp"
+        android:layout_height="15dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="96dp"
+        android:text="ĐỊA CHỈ"
+        android:textColor="@color/mainGray"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/txtNumberhouse"
+        android:layout_width="57.67dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginLeft="23dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Số nhà *"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edittxtNumberhouse"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="153dp"
+        android:background="@drawable/drawable_custom_editext"
+        android:hint="Số nhà"
+        android:paddingLeft="23dp"
+        android:textColor="#D9D9D9" />
+
+    <TextView
+        android:id="@+id/txtStressName"
+        android:layout_width="84dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginLeft="23dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Tên đường *"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edittxtStressName"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="237dp"
+        android:background="@drawable/drawable_custom_editext"
+        android:hint="Tên đường"
+        android:paddingLeft="23dp"
+        android:textColor="#D9D9D9" />
+
+    <TextView
+        android:id="@+id/txtCityName"
+        android:layout_width="84dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="23dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Thành phố *"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edittxtCityName"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="321dp"
+        android:background="@drawable/drawable_custom_editext"
+        android:hint="Thành phố"
+        android:paddingLeft="23dp"
+        android:textColor="#D9D9D9" />
+    <TextView
+        android:id="@+id/txtCityDistrict"
+        android:layout_width="42dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="384dp"
+        android:layout_marginLeft="23dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Tỉnh *"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/edittxtCityDistrict"
+        android:layout_width="366dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="405dp"
+        android:background="@drawable/drawable_custom_editext"
+        android:hint="Tỉnh"
+        android:paddingLeft="23dp"
+        android:textColor="#D9D9D9" />
+
+    <LinearLayout
+        android:id="@+id/NoteforDriver"
+        android:layout_width="366dp"
+        android:layout_height="155dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="468dp"
+        android:background="#59D9D9D9"/>
+    <TextView
+        android:id="@+id/txtNoteforDriver"
+        android:layout_width="240dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="482dp"
+        android:layout_marginLeft="36dp"
+        android:fontFamily="@font/inter_medium"
+        android:text="Ghi chú cho tài xế (không bắt buộc)"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtDeleteCity"
+        android:layout_width="92dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="680dp"
+        android:layout_marginLeft="160dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="XÓA ĐỊA CHỈ"
+        android:textColor="@color/mainPurple"
+        android:textSize="14sp" />
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="336dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="749dp"
+        android:backgroundTint="@color/mainPurple"
+        android:fontFamily="@font/inter_bold"
+        android:text="Lưu "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</RelativeLayout>

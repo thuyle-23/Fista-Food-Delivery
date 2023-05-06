@@ -39,6 +39,7 @@
             android:layout_marginTop="50dp"
             app:srcCompat="@drawable/icon_back" />
     </LinearLayout>
+
     <TextView
         android:id="@+id/txtMyOrders"
         android:layout_width="150dp"
