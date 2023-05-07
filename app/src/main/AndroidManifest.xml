@@ -14,14 +14,19 @@
         android:theme="@style/Theme.FoodDelivery"
         tools:targetApi="31">
         <activity
+            android:name=".UpdateOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".RatingAndReviewActivity"
             android:exported="false" />
         <activity
-            android:name=".EnterPassword"
+            android:name=".ConfirmOrdersActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
-            android:name=".ConfirmOrdersActivity"
-            android:exported="false" />
+            android:name=".AddLocationnActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Welcome"
             android:exported="false" />
@@ -62,8 +67,9 @@
             android:name=".Account"
             android:exported="false" />
         <activity
-            android:name=".AddLocationnActivity"
-            android:exported="true">
+            android:name=".EnterPassword"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

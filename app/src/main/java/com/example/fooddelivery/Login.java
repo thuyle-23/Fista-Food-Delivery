@@ -27,6 +27,7 @@ public class Login extends AppCompatActivity {
     private EditText txtphoneNumber;
     private Button btnGetOTP;
     private ImageView imgBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,14 +53,15 @@ public class Login extends AppCompatActivity {
 
                 PhoneAuthProvider.getInstance().verifyPhoneNumber("+84" + txtphoneNumber.getText().toString(), 60, TimeUnit.SECONDS,
                         Login.this,
-                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential){
+                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                                 progressBar.setVisibility(View.GONE);
                                 btnGetOTP.setVisibility(View.VISIBLE);
                             }
+
                             @Override
-                            public void onVerificationFailed(@NonNull FirebaseException e){
+                            public void onVerificationFailed(@NonNull FirebaseException e) {
                                 progressBar.setVisibility(View.GONE);
                                 btnGetOTP.setVisibility(View.VISIBLE);
                                 Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -75,12 +77,12 @@ public class Login extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }
-);
+                );
             }
         });
-        imgBack.setOnClickListener(new View.OnClickListener(){
+        imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 backToSignInPage();
             }
         });
@@ -92,17 +94,21 @@ public class Login extends AppCompatActivity {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
         }
+
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             String phoneNumber = txtphoneNumber.getText().toString().trim();
 
             btnGetOTP.setEnabled(!phoneNumber.isEmpty() && phoneNumber.length() == 9);
         }
-        @Override public void afterTextChanged(Editable s) {
+
+        @Override
+        public void afterTextChanged(Editable s) {
 
         }
     };
-    public void backToSignInPage(){
+
+    public void backToSignInPage() {
         Intent intent = new Intent(Login.this, SignIn.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);

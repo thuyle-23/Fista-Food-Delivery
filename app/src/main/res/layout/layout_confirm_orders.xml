@@ -550,7 +550,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/et_write_review"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="100dp"
                         android:background="@android:color/transparent"
                         android:gravity="top|left"
                         android:hint="Viết ghi chú cho đơn hàng (không bắt buộc)"
@@ -588,7 +588,6 @@
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
-
             </LinearLayout>
 
         </LinearLayout>
