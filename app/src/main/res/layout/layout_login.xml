@@ -33,7 +33,7 @@
         android:layout_centerInParent="true"
         android:layout_marginTop="75dp"
         android:orientation="vertical"
-        android:padding="30dp"
+        android:padding="37dp"
         tools:layout_centerVertical="true">
 
         <TextView
