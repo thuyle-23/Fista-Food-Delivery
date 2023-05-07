@@ -3,11 +3,13 @@ package com.example.fooddelivery;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -86,6 +88,14 @@ public class Login extends AppCompatActivity {
                 backToSignInPage();
             }
         });
+        txtphoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            @Override
+            public void onFocusChange(View v, boolean hasFocus){
+                if(!hasFocus){
+                    hideKeyboard(v);
+                }
+            }
+        });
 
     }
 
@@ -112,6 +122,10 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, SignIn.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
+    }
+    public void hideKeyboard(View view){
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
 }

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
     tools:context=".AddLocationnActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -62,6 +64,7 @@
 
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,12 +74,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
             android:gravity="bottom"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical"
                 android:padding="38dp"
                 tools:layout_centerVertical="true">
@@ -84,6 +91,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
                     android:orientation="vertical">
 
                     <TextView
@@ -99,6 +108,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -145,6 +156,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -191,6 +204,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -238,6 +253,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:backgroundTint="@color/gray_600"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -301,6 +318,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -335,8 +354,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="720dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="720dp"
         android:layout_marginBottom="10dp"
         android:background="@color/white"
         android:orientation="vertical">
@@ -347,6 +366,7 @@
             android:layout_height="55dp"
             android:layout_marginStart="38dp"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="@color/mainPurple"
             android:fontFamily="@font/inter_bold"
             android:text="LƯU"
