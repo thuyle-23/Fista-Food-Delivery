@@ -158,6 +158,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <Button
             android:id="@+id/btnGetOTP"
             android:layout_width="336dp"
@@ -167,6 +168,7 @@
             android:backgroundTint="@color/mainPurple"
             android:fontFamily="@font/inter_bold"
             android:text="@string/btnConfirm"
+            android:textSize="16sp"
             app:cornerRadius="8dp"
             app:strokeColor="@color/mainPurple" />
     <ProgressBar

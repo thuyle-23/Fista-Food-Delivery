@@ -103,12 +103,12 @@ public class Account extends AppCompatActivity {
         });
     }
     public void openAddressBookPage(){
-        Intent intent = new Intent(Account.this, Login.class);
+        Intent intent = new Intent(Account.this, AddressBookActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openPersonalAccountPage(){
-        Intent intent = new Intent(Account.this, Login.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
@@ -118,37 +118,37 @@ public class Account extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openRatingPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openLikeRestaurantPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openCouponWalletPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openSupportPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openNotificationPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openPoliciesPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openPaymentMethodPage(){
-        Intent intent = new Intent(Account.this, OrdersActivity.class);
+        Intent intent = new Intent(Account.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }

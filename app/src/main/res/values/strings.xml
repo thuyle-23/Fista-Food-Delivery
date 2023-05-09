@@ -53,4 +53,19 @@
     <string name="announcement">Thông báo</string>
     <string name="policies">Điều khoản và chính sách</string>
     <string name="myOrders">Đơn hàng của tôi</string>
+    <string name="tv_street">20, Abayomi Adewale Street,</string>
+    <string name="tv_provice">Ago Palace way, Okota (LAGOS)</string>
+    <string name="tv_city">LAGOS</string>
+    <string name="cusname">Nguyễn Văn A</string>
+    <string name="cusphone">0854000999</string>
+    <string name="restaurantName">TocoToco - Tân Lập </string>
+    <string name="quantity">1</string>
+    <string name="total">33,000đ</string>
+    <string name="tv_distance">0,8</string>
+    <string name="shippingprice">10,000đ</string>
+    <string name="allTotal">43,000đ</string>
+    <string name="note">không có</string>
+    <string name="idOrder">270938-VN8293</string>
+    <string name="timeOrder">Hôm nay 03:32</string>
+    <string name="paymentMethod">Tiền mặt</string>
 </resources>

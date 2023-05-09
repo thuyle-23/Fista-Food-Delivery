@@ -24,7 +24,7 @@
             app:layout_scrollFlags="noScroll">
 
             <ImageView
-                android:id="@+id/iv_back"
+                android:id="@+id/imgBack"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="10dp"
@@ -585,7 +585,6 @@
                     android:padding="8dp"
                     android:stateListAnimator="@null"
                     android:text="ĐẶT ĐƠN - 76,000đ"
-                    android:textAllCaps="false"
                     android:textColor="@color/white"
                     android:textSize="14sp" />
             </LinearLayout>

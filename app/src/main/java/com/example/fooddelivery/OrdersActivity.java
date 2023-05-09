@@ -34,7 +34,7 @@ public class OrdersActivity extends AppCompatActivity {
         });
     }
     public void openSearchPage(){
-        Intent intent = new Intent(OrdersActivity.this, Login.class);
+        Intent intent = new Intent(OrdersActivity.this, Account.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }

@@ -220,6 +220,7 @@
                     android:backgroundTint="@color/mainPurple"
                     android:fontFamily="@font/inter_bold"
                     android:text="GỬI"
+                    android:textSize="16sp"
                     app:cornerRadius="8dp" />
 
             </LinearLayout>

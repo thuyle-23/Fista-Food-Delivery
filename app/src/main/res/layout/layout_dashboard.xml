@@ -502,7 +502,7 @@
 
                         <Button
                             android:id="@+id/button4"
-                            android:layout_width="158dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="60dp"
                             android:layout_gravity="center"
                             android:background="@drawable/button"
@@ -510,7 +510,7 @@
                             android:gravity="center"
                             android:text="XEM THÊM (+5)"
                             android:textColor="@color/mainPurple"
-                            android:textSize="14sp"
+                            android:textSize="16sp"
                             app:backgroundTint="@null" />
                     </LinearLayout>
 
