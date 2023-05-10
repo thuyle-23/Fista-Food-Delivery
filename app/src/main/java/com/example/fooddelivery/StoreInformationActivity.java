@@ -24,7 +24,7 @@ public class StoreInformationActivity extends AppCompatActivity {
         });
     }
     public void backtoSearchPage(){
-        Intent intent = new Intent(StoreInformationActivity.this, SignIn.class);
+        Intent intent = new Intent(StoreInformationActivity.this, DashboardActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
     }

@@ -19,6 +19,8 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +31,11 @@ public class DashboardActivity extends AppCompatActivity {
     private ImageAdapter adapter;
     private Handler sliderHandler = new Handler();
     private ListView listItemFood;
-    private ImageView imgMenuAccount;
+    private ImageView imgMenuAccount, imageView26;
+    private TextView textView18;
     private ArrayList<FoodItem> foodItemArrayList;
     private EditText txtFindFood;
+    private TextView textView13;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,23 @@ public class DashboardActivity extends AppCompatActivity {
         AssignFoodFist();
 
         imgMenuAccount = (ImageView) findViewById(R.id.imgMenuAccount);
+        txtFindFood = findViewById(R.id.txtFindFood);
+        imageView26 = findViewById(R.id.imageView26);
+        textView18 = findViewById(R.id.textView18);
+        textView13 = findViewById(R.id.textView13);
+
+        textView18.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openAddNewOrderPage();
+            }
+    });
+        textView13.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                openCofirmOrderPage();
+            }
+        });
         imgMenuAccount.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -51,6 +72,12 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 openSearchPage();
+            }
+        });
+        imageView26.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                showBottomSheetDialog();
             }
         });
     }
@@ -163,5 +190,21 @@ public class DashboardActivity extends AppCompatActivity {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
         listView.requestLayout();
+    }
+    private void showBottomSheetDialog(){
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.layout_add_to_cart);
+
+        bottomSheetDialog.show();
+    }
+    public void openAddNewOrderPage(){
+        Intent intent = new Intent(DashboardActivity.this, AddNewOrderActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+    public void openCofirmOrderPage(){
+        Intent intent = new Intent(DashboardActivity.this, ConfirmOrdersActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

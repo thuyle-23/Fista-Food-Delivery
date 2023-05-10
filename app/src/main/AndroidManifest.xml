@@ -14,6 +14,9 @@
         android:theme="@style/Theme.FoodDelivery"
         tools:targetApi="31">
         <activity
+            android:name=".Add_To_Cart_Activity"
+            android:exported="false" />
+        <activity
             android:name=".OrderDetailsActivity"
             android:exported="false" />
         <activity
@@ -26,7 +29,7 @@
             android:name=".UpdateOrderActivity"
             android:exported="false" />
         <activity
-            android:name=".RatingAndReviewActivity"
+            android:name=".ConfirmOTP"
             android:exported="false" />
         <activity
             android:name=".ConfirmOrdersActivity"
@@ -37,7 +40,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Welcome"
+            android:name=".DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".OrdersTypeActivity"
@@ -62,21 +65,26 @@
             android:exported="false" />
         <activity
             android:name=".EnterPassword"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".OrdersActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".AddLocationnActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".DashboardActivity"
-            android:exported="false" />
+            android:name=".RatingAndReviewActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Account"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
-            android:name=".ConfirmOTP"
+            android:name=".Welcome"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>

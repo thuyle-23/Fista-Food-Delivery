@@ -56,43 +56,48 @@ public class ConfirmOTP extends AppCompatActivity {
 
         btnGetOTP.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v){
-                if(txtinputCode1.getText().toString().trim().isEmpty()
-                        || txtinputCode2.getText().toString().trim().isEmpty()
-                        || txtinputCode3.getText().toString().trim().isEmpty()
-                        || txtinputCode4.getText().toString().trim().isEmpty()
-                        || txtinputCode5.getText().toString().trim().isEmpty()
-                        || txtinputCode6.getText().toString().trim().isEmpty()){
-                    Toast.makeText(ConfirmOTP.this,"Hãy nhập mã xác nhận OTP", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                String code = txtinputCode1.getText().toString() +
-                        txtinputCode2.getText().toString() +
-                        txtinputCode3.getText().toString() +
-                        txtinputCode4.getText().toString() +
-                        txtinputCode5.getText().toString() +
-                        txtinputCode6.getText().toString();
-
-                if(verificationId != null){
-                    progressBar.setVisibility(View.VISIBLE);
-                    btnGetOTP.setVisibility(View.INVISIBLE);
-                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, code);
-                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task){
-                            progressBar.setVisibility(View.GONE);
-                            btnGetOTP.setVisibility(View.VISIBLE);
-                            if(task.isSuccessful()){
-                                Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(ConfirmOTP.this,"Mã xác nhận OTP không hợp lệ", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                }
+            public void onClick(View v) {
+                openEnterPasswordPage();
             }
+
+//            @Override
+//            public void onClick(View v){
+//                if(txtinputCode1.getText().toString().trim().isEmpty()
+//                        || txtinputCode2.getText().toString().trim().isEmpty()
+//                        || txtinputCode3.getText().toString().trim().isEmpty()
+//                        || txtinputCode4.getText().toString().trim().isEmpty()
+//                        || txtinputCode5.getText().toString().trim().isEmpty()
+//                        || txtinputCode6.getText().toString().trim().isEmpty()){
+//                    Toast.makeText(ConfirmOTP.this,"Hãy nhập mã xác nhận OTP", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                String code = txtinputCode1.getText().toString() +
+//                        txtinputCode2.getText().toString() +
+//                        txtinputCode3.getText().toString() +
+//                        txtinputCode4.getText().toString() +
+//                        txtinputCode5.getText().toString() +
+//                        txtinputCode6.getText().toString();
+//
+//                if(verificationId != null){
+//                    progressBar.setVisibility(View.VISIBLE);
+//                    btnGetOTP.setVisibility(View.INVISIBLE);
+//                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(verificationId, code);
+//                    FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>(){
+//                        @Override
+//                        public void onComplete(@NonNull Task<AuthResult> task){
+//                            progressBar.setVisibility(View.GONE);
+//                            btnGetOTP.setVisibility(View.VISIBLE);
+//                            if(task.isSuccessful()){
+//                                Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                                startActivity(intent);
+//                            } else {
+//                                Toast.makeText(ConfirmOTP.this,"Mã xác nhận OTP không hợp lệ", Toast.LENGTH_SHORT).show();
+//                            }
+//                        }
+//                    });
+//                }
+//            }
         });
         findViewById(R.id.txtResendOTP).setOnClickListener(new View.OnClickListener(){
             @Override
@@ -211,5 +216,10 @@ public class ConfirmOTP extends AppCompatActivity {
         Intent intent = new Intent(ConfirmOTP.this, Login.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
+    }
+    public void openEnterPasswordPage(){
+        Intent intent = new Intent(ConfirmOTP.this, EnterPassword.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 }

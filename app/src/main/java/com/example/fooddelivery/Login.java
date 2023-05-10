@@ -43,49 +43,55 @@ public class Login extends AppCompatActivity {
 
 
         txtphoneNumber.addTextChangedListener(loginTextWatcher);
-        btnGetOTP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (txtphoneNumber.getText().toString().trim().isEmpty()) {
-                    Toast.makeText(Login.this, "Enter mobile", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                progressBar.setVisibility(View.VISIBLE);
-                btnGetOTP.setVisibility(View.INVISIBLE);
-
-                PhoneAuthProvider.getInstance().verifyPhoneNumber("+84" + txtphoneNumber.getText().toString(), 60, TimeUnit.SECONDS,
-                        Login.this,
-                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                            @Override
-                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                progressBar.setVisibility(View.GONE);
-                                btnGetOTP.setVisibility(View.VISIBLE);
-                            }
-
-                            @Override
-                            public void onVerificationFailed(@NonNull FirebaseException e) {
-                                progressBar.setVisibility(View.GONE);
-                                btnGetOTP.setVisibility(View.VISIBLE);
-                                Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                progressBar.setVisibility(View.GONE);
-                                btnGetOTP.setVisibility(View.VISIBLE);
-                                Intent intent = new Intent(getApplicationContext(), ConfirmOTP.class);
-                                intent.putExtra("mobile", txtphoneNumber.getText().toString());
-                                intent.putExtra("verificationId", verificationId);
-                                startActivity(intent);
-                            }
-                        }
-                );
-            }
-        });
+//        btnGetOTP.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (txtphoneNumber.getText().toString().trim().isEmpty()) {
+//                    Toast.makeText(Login.this, "Enter mobile", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                progressBar.setVisibility(View.VISIBLE);
+//                btnGetOTP.setVisibility(View.INVISIBLE);
+//
+//                PhoneAuthProvider.getInstance().verifyPhoneNumber("+84" + txtphoneNumber.getText().toString(), 60, TimeUnit.SECONDS,
+//                        Login.this,
+//                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//                            @Override
+//                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+//                                progressBar.setVisibility(View.GONE);
+//                                btnGetOTP.setVisibility(View.VISIBLE);
+//                            }
+//
+//                            @Override
+//                            public void onVerificationFailed(@NonNull FirebaseException e) {
+//                                progressBar.setVisibility(View.GONE);
+//                                btnGetOTP.setVisibility(View.VISIBLE);
+//                                Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                            @Override
+//                            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+//                                progressBar.setVisibility(View.GONE);
+//                                btnGetOTP.setVisibility(View.VISIBLE);
+//                                Intent intent = new Intent(getApplicationContext(), ConfirmOTP.class);
+//                                intent.putExtra("mobile", txtphoneNumber.getText().toString());
+//                                intent.putExtra("verificationId", verificationId);
+//                                startActivity(intent);
+//                            }
+//                        }
+//                );
+//            }
+//        });
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 backToSignInPage();
+            }
+        });
+        btnGetOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openConfirmOTPPage();
             }
         });
         txtphoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener(){
@@ -127,5 +133,9 @@ public class Login extends AppCompatActivity {
         InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
-
+    public void openConfirmOTPPage(){
+        Intent intent = new Intent(Login.this, ConfirmOTP.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
 }

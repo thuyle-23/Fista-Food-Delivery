@@ -108,7 +108,7 @@ public class Account extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openPersonalAccountPage(){
-        Intent intent = new Intent(Account.this, DashboardActivity.class);
+        Intent intent = new Intent(Account.this, PersonalAccountActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
@@ -148,7 +148,7 @@ public class Account extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
     public void openPaymentMethodPage(){
-        Intent intent = new Intent(Account.this, DashboardActivity.class);
+        Intent intent = new Intent(Account.this, PaymentMethodsActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
