@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StoreInformationActivity">
+    tools:context=".Activity.StoreInformationActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/layout_home_screen"

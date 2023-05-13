@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clickable="true"
     android:focusableInTouchMode="true"
-    tools:context=".Login">
+    tools:context=".Activity.LoginActivity">
 
     <ImageView
         android:id="@+id/imgBack"
@@ -118,6 +118,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="37dp"
             android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
             android:backgroundTint="@color/mainPurple"
             android:enabled="false"
             android:fontFamily="@font/inter_bold"

@@ -10,32 +10,62 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="horizontal">
+            android:background="@color/white"
+            android:elevation="0dp"
+            android:translationZ="0dp">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginLeft="17dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/icon_back" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center"
+                android:paddingHorizontal="14dp"
+                app:layout_scrollFlags="noScroll">
 
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="122dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/inter_bold"
-                android:paddingBottom="14dp"
-                android:text="Tìm kiếm"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="17dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:src="@drawable/icon_back"
+                    android:visibility="visible" />
+
+                <TableRow
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_shows_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/inter_bold"
+                        android:padding="1dp"
+                        android:text="Tìm kiếm"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                </TableRow>
+
+
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="false"
+                    android:src="@drawable/icon_remove"
+                    android:visibility="invisible" />
+
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
