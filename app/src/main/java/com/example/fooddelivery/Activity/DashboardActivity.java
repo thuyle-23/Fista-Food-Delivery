@@ -23,8 +23,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.fooddelivery.Adapter.AdapterFoodItem;
-import com.example.fooddelivery.Adapter.FoodItem;
-import com.example.fooddelivery.Adapter.Image;
+import com.example.fooddelivery.Model.FoodItem;
+import com.example.fooddelivery.Model.Image;
 import com.example.fooddelivery.Adapter.ImageAdapter;
 import com.example.fooddelivery.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;

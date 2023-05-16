@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.fooddelivery.Model.Image;
 import com.example.fooddelivery.R;
 import com.makeramen.roundedimageview.RoundedImageView;
 
