@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,15 +12,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery"
-        tools:targetApi="31" >
+        tools:targetApi="31">
         <activity
-            android:name=".Activity.LikeRestaurantActivity"
+            android:name=".Activity.BtsDeliveryTypeActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.CouponWalletActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SearchFoodActivity"
+            android:name=".Activity.VoucherInactivatedFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.VoucherUsedFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.VoucherActivatedFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LikeRestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RatingRestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Welcome"
             android:exported="false" />
         <activity
             android:name=".Activity.SearchPageActivity"
@@ -96,9 +111,9 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Activity.Welcome"
+            android:name=".Activity.SearchFoodActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.fooddelivery.Adapter;
+package com.example.fooddelivery.Model;
 
 public class FoodItem {
     private int imageItemShop;

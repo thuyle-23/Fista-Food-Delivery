@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.fooddelivery.Model.FoodItem;
 import com.example.fooddelivery.R;
 
 import java.util.List;

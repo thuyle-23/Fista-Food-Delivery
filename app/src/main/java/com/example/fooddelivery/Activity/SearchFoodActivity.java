@@ -1,10 +1,12 @@
 package com.example.fooddelivery.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -17,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fooddelivery.Adapter.AdapterFoodItem;
 import com.example.fooddelivery.Adapter.CategoryAdapterSpinner;
-import com.example.fooddelivery.Adapter.CategorySpinner;
-import com.example.fooddelivery.Adapter.FoodItem;
+import com.example.fooddelivery.Model.CategorySpinner;
+import com.example.fooddelivery.Model.FoodItem;
 import com.example.fooddelivery.R;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ public class SearchFoodActivity extends AppCompatActivity {
     private ListView listItemFood;
 
     private Handler sliderHandler = new Handler();
+    private ImageView imgBack;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,7 @@ public class SearchFoodActivity extends AppCompatActivity {
         AssignFoodFist();
 
         spnDanhMuc = findViewById(R.id.spn_danhmuc);
+        imgBack = findViewById(R.id.imgBack);
         categoryAdapterSpinnerDanhMuc = new CategoryAdapterSpinner(this,R.layout.item_selected_spinner,getListCategorySpinnerDanhMuc());
         spnDanhMuc.setAdapter(categoryAdapterSpinnerDanhMuc);
         spnDanhMuc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -69,6 +73,12 @@ public class SearchFoodActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backToSearchPage();
             }
         });
     }
@@ -136,5 +146,10 @@ public class SearchFoodActivity extends AppCompatActivity {
         params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
         listView.setLayoutParams(params);
         listView.requestLayout();
+    }
+    public void backToSearchPage() {
+        Intent intent = new Intent(SearchFoodActivity.this, SearchPageActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
     }
 }
