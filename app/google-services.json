@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "502086923480",
+    "project_id": "fistafooddelivery",
+    "storage_bucket": "fistafooddelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502086923480:android:8e2cfa9a7c5007a23a93ad",
+        "android_client_info": {
+          "package_name": "com.example.fooddelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502086923480-olnioj9utmjorjpsrojg21fp582d3vn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW7DbJKlc2hnV1cPj98qfh0VV2UE6lUME"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502086923480-olnioj9utmjorjpsrojg21fp582d3vn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

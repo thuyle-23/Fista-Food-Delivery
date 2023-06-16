@@ -3,4 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/imgEclipse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ellipse_6" />
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="102dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="79dp"
+        app:srcCompat="@drawable/fista_food_delivery" />
 </RelativeLayout>

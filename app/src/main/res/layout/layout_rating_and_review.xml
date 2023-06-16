@@ -3,165 +3,228 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Activity.RatingAndReviewActivity">
 
-    <include layout="@layout/first_toolbar" />
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="0dp"
+        android:translationZ="0dp">
 
-    <LinearLayout
-        android:layout_width="412dp"
-        android:layout_height="86dp"
-        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
+            android:paddingHorizontal="14dp"
+            app:layout_scrollFlags="noScroll">
 
-        <ImageView
-            android:id="@+id/imgBack"
-            android:layout_width="25dp"
-            android:layout_height="16dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/icon_back" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="17dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:src="@drawable/icon_back"
+                android:visibility="visible" />
 
-    <TextView
-        android:id="@+id/txtMyReview"
-        android:layout_width="165dp"
-        android:layout_height="22dp"
-        android:layout_marginLeft="129dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/inter_bold"
-        android:text="Đánh giá đơn hàng"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp" />
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
-    <ImageView
-        android:id="@+id/imgView"
-        android:layout_width="360dp"
-        android:layout_height="0.5dp"
-        android:layout_marginLeft="26dp"
-        android:background="@drawable/drawable_roundstyle"
-        android:layout_marginTop="89.5dp"
-        app:srcCompat="?attr/actionModeBackground" />
-    <TextView
-        android:id="@+id/txtReview"
-        android:layout_width="115dp"
-        android:layout_height="15dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="96dp"
-        android:text="ĐÁNH GIÁ DỊCH VỤ"
-        android:textColor="@color/mainGray"
-        android:fontFamily="@font/inter_medium"
-        android:textSize="12sp"/>
-    <EditText
-        android:id="@+id/edittxtFullName"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="132dp"
-        android:background="@drawable/drawable_custom_editext"
-        android:hint="Nhập họ và tên"
-        android:paddingLeft="18dp"
-        android:textColor="#D9D9D9" />
+                <TextView
+                    android:id="@+id/tv_shows_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:padding="1dp"
+                    android:text="Đánh giá đơn hàng"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/edittxtEmail"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="190dp"
-        android:background="@drawable/drawable_custom_editext"
-        android:hint="Nhập Email"
-        android:paddingLeft="18dp"
-        android:textColor="#D9D9D9" />
+            </TableRow>
 
-    <TextView
-        android:id="@+id/edittxtReview"
-        android:layout_width="125dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="23dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="Đánh giá dịch vụ *"
-        android:textColor="@color/black"
-        android:textSize="14sp" />
 
-    <EditText
-        android:id="@+id/edittxtReviewOverall"
-        android:layout_width="366dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="275dp"
-        android:background="@drawable/drawable_custom_editext"
-        android:hint="Đánh giá tổng quan (giới hạn 150 kí tự)"
-        android:paddingLeft="18dp"
-        android:textColor="#D9D9D9" />
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="false"
+                android:src="@drawable/icon_remove"
+                android:visibility="invisible" />
 
-    <EditText
-        android:id="@+id/edittxtReviewDetailed"
-        android:layout_width="366dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="340dp"
-        android:background="@drawable/drawable_custom_editext"
-        android:hint="Nhập đánh giá chi tiết cho đơn hàng, giới hạn 2000 kí tự (không bắt buộc)"
-        android:padding="12dp"
-        android:gravity="top"
-        android:textColor="#D9D9D9" />
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="116dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="450dp"
-        android:backgroundTint="@color/mainPurple"
-        android:text="GỬI"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-    <TextView
-        android:id="@+id/txtSend"
-        android:layout_width="35dp"
-        android:layout_height="16dp"
-        android:layout_marginTop="465dp"
-        android:layout_marginLeft="74dp"
-        android:fontFamily="@font/inter_medium"
-        android:text="GỬI"
-        android:textColor="@color/white"
-        android:textSize="14sp"/>
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/imgStar1"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="147dp"
-        app:srcCompat="@android:drawable/star_big_off" />
-    <ImageView
-        android:id="@+id/imgStar2"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="167dp"
-        app:srcCompat="@android:drawable/star_big_off" />
-    <ImageView
-        android:id="@+id/imgStar3"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="187dp"
-        app:srcCompat="@android:drawable/star_big_off" />
-    <ImageView
-        android:id="@+id/imgStar4"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="207dp"
-        app:srcCompat="@android:drawable/star_big_off" />
-    <ImageView
-        android:id="@+id/imgStar5"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginLeft="227dp"
-        app:srcCompat="@android:drawable/star_big_off" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="38dp"
+            tools:layout_centerVertical="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtReview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/inter_medium"
+                    android:text="ĐÁNH GIÁ DỊCH VỤ"
+                    android:textColor="@color/mainGray"
+                    android:textSize="12sp" />
+
+                <EditText
+                    android:id="@+id/text"
+                    android:layout_width="336dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/edittext_border_purple"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Nhập họ và tên"
+                    android:paddingLeft="18dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edittxtEmail"
+                    android:layout_width="336dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="25dp"
+                    android:background="@drawable/edittext_border_purple"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Nhập email"
+                    android:paddingLeft="18dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/edittxtReview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="Đánh giá dịch vụ"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/txtTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="*"
+                        android:textColor="@color/validRed"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/imgStar1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/icon_rating" />
+
+                    <ImageView
+                        android:id="@+id/imgStar2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/icon_rating" />
+
+                    <ImageView
+                        android:id="@+id/imgStar3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/icon_rating" />
+
+                    <ImageView
+                        android:id="@+id/imgStar4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/icon_rating" />
+
+                    <ImageView
+                        android:id="@+id/imgStar5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="25dp"
+                        app:srcCompat="@drawable/icon_rating" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/edittxtReviewOverall"
+                    android:layout_width="336dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edittext_border_purple"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Đánh giá tổng quan (giới hạn 150 kí tự)"
+                    android:paddingLeft="18dp"
+                    android:textColor="#D9D9D9"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/edittxtReviewDetailed"
+                    android:layout_width="336dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="7dp"
+                    android:background="@drawable/edittext_border_purple"
+                    android:fontFamily="@font/inter_medium"
+                    android:gravity="top"
+                    android:hint="Nhập đánh giá chi tiết cho đơn hàng, giới hạn 2000 kí tự (không bắt buộc)"
+                    android:paddingLeft="18dp"
+                    android:paddingTop="10dp"
+                    android:textColor="#D9D9D9"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="116dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/mainPurple"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="GỬI"
+                    android:textSize="16sp"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".Activity.AddLocationnActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="0dp"
+        android:translationZ="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:gravity="center"
+            android:paddingHorizontal="14dp"
+            app:layout_scrollFlags="noScroll">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="17dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:src="@drawable/icon_back"
+                android:visibility="visible" />
+
+            <TableRow
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/tv_shows_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_bold"
+                    android:padding="1dp"
+                    android:text="Sửa địa chỉ"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </TableRow>
+
+
+            <ImageView
+                android:id="@+id/iv_edit"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="false"
+                android:src="@drawable/icon_remove"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical"
+                android:padding="38dp"
+                tools:layout_centerVertical="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtReview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:text="ĐỊA CHỈ"
+                        android:textColor="@color/mainGray"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/editxtNameAddress"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Số nhà"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtTemp1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="*"
+                                android:textColor="@color/validRed"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittxtNameAddress"
+                            android:layout_width="336dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/edittext_border_purple"
+                            android:fontFamily="@font/inter_medium"
+                            android:hint="Số nhà"
+                            android:paddingLeft="18dp"
+                            android:textColor="#D9D9D9"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/editxtStreetName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Tên đường"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtTemp2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="*"
+                                android:textColor="@color/validRed"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittxtStreetName"
+                            android:layout_width="336dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/edittext_border_purple"
+                            android:fontFamily="@font/inter_medium"
+                            android:hint="Tên đường"
+                            android:paddingLeft="18dp"
+                            android:textColor="#D9D9D9"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/editxtCityName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Thành phố"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtTemp3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="*"
+                                android:textColor="@color/validRed"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittxtCityName"
+                            android:layout_width="336dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/edittext_border_purple"
+                            android:fontFamily="@font/inter_medium"
+                            android:hint="Thành phố"
+                            android:paddingLeft="18dp"
+                            android:textColor="#D9D9D9"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/gray_600"
+                        android:clickable="true"
+                        android:focusableInTouchMode="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/editxtSurburbName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="Tỉnh"
+                                android:textColor="@color/black"
+                                android:textSize="14sp" />
+
+                            <TextView
+                                android:id="@+id/txtTemp4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginTop="20dp"
+                                android:fontFamily="@font/inter_medium"
+                                android:text="*"
+                                android:textColor="@color/validRed"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <EditText
+                            android:id="@+id/edittxtSuburbName"
+                            android:layout_width="336dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="7dp"
+                            android:background="@drawable/edittext_border_purple"
+                            android:fontFamily="@font/inter_medium"
+                            android:hint="Tỉnh"
+                            android:paddingLeft="18dp"
+                            android:textColor="#D9D9D9"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/edittxtNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="20dp"
+                            android:background="@color/bgGray"
+                            android:fontFamily="@font/inter_medium"
+                            android:gravity="top"
+                            android:hint="Ghi chú cho tài xế (không bắt buộc)"
+                            android:paddingLeft="18dp"
+                            android:paddingTop="10dp"
+                            android:textColor="#D9D9D9"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/bgGray"></LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtDeleteLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:text="XÓA ĐỊA CHỈ"
+                    android:textColor="@color/mainPurple"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/bgGray"></LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="720dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="336dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/mainPurple"
+            android:fontFamily="@font/inter_bold"
+            android:text="LƯU"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:strokeColor="@color/mainPurple" />
+
+    </LinearLayout>
+</RelativeLayout>

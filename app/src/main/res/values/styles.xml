@@ -1,0 +1,9 @@
+<resources>
+
+    <style name="Widget.Theme.FoodDelivery.MyView" parent="">
+        <item name="android:background">@color/gray_400</item>
+    </style>
+    <style name="customFontStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/inter_semibold</item>
+    </style>
+</resources>
