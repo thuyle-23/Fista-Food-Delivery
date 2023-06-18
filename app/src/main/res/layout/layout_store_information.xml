@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:elevation="0dp"
-            android:outlineProvider="none"
             android:translationZ="0dp">
 
             <LinearLayout
