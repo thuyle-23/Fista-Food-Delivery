@@ -62,7 +62,6 @@
                 android:layout_marginStart="38dp"
                 android:layout_marginTop="7dp"
                 android:fontFamily="@font/inter_medium"
-                android:text="@string/helper_otp"
                 android:textColor="@color/mainGray"
                 android:textSize="14sp" />
 
@@ -80,17 +79,43 @@
                     android:layout_height="48dp"
                     android:fontFamily="@font/inter_bold"
                     android:paddingLeft="18dp"
-                    android:text="@string/_84"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/txtphoneNumber"
+                    android:id="@+id/txtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@null"
                     android:fontFamily="@font/inter_medium"
                     android:hint="@string/placeholder_phoneNumber"
+                    android:paddingLeft="5dp"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="336dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="38dp"
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:background="@drawable/edittext_border_purple">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:paddingLeft="18dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@null"
+                    android:fontFamily="@font/inter_medium"
+                    android:hint="Mật khẩu"
                     android:inputType="number"
                     android:paddingLeft="5dp"
                     android:textSize="16sp" />
@@ -122,7 +147,7 @@
             android:backgroundTint="@color/mainPurple"
             android:enabled="false"
             android:fontFamily="@font/inter_bold"
-            android:text="@string/btnNext"
+            android:text="ĐĂNG NHẬP"
             android:textSize="16sp"
             app:cornerRadius="8dp"
             app:strokeColor="@color/mainPurple" />

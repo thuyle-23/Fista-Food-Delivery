@@ -1,80 +1,63 @@
 package com.example.fooddelivery.Activity;
 
+import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.fooddelivery.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText txtphoneNumber;
+    private EditText txtEmail, txtPassword;
     private Button btnGetOTP;
     private ImageView imgBack;
+    private FirebaseAuth mAuth;
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_login);
 
-        txtphoneNumber = findViewById(R.id.txtphoneNumber);
+        txtEmail = findViewById(R.id.txtEmail);
+        txtPassword = findViewById(R.id.txtPassword);
         btnGetOTP = findViewById(R.id.btnGetOTP);
         imgBack = findViewById(R.id.imgBack);
+        mAuth = FirebaseAuth.getInstance();
 
         final ProgressBar progressBar = findViewById(R.id.progressBar);
 
-
-        txtphoneNumber.addTextChangedListener(loginTextWatcher);
-//        btnGetOTP.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (txtphoneNumber.getText().toString().trim().isEmpty()) {
-//                    Toast.makeText(LoginActivity.this, "Enter mobile", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                progressBar.setVisibility(View.VISIBLE);
-//                btnGetOTP.setVisibility(View.INVISIBLE);
-//
-//                PhoneAuthProvider.getInstance().verifyPhoneNumber("+84" + txtphoneNumber.getText().toString(), 60, TimeUnit.SECONDS,
-//                        LoginActivity.this,
-//                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-//                            @Override
-//                            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-//                                progressBar.setVisibility(View.GONE);
-//                                btnGetOTP.setVisibility(View.VISIBLE);
-//                            }
-//
-//                            @Override
-//                            public void onVerificationFailed(@NonNull FirebaseException e) {
-//                                progressBar.setVisibility(View.GONE);
-//                                btnGetOTP.setVisibility(View.VISIBLE);
-//                                Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                            @Override
-//                            public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-//                                progressBar.setVisibility(View.GONE);
-//                                btnGetOTP.setVisibility(View.VISIBLE);
-//                                Intent intent = new Intent(getApplicationContext(), ConfirmOTPActivity.class);
-//                                intent.putExtra("mobile", txtphoneNumber.getText().toString());
-//                                intent.putExtra("verificationId", verificationId);
-//                                startActivity(intent);
-//                            }
-//                        }
-//                );
-//            }
-//        });
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,17 +67,50 @@ public class LoginActivity extends AppCompatActivity {
         btnGetOTP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openConfirmOTPPage();
+                btnGetOTP.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        String email, password;
+                        email=String.valueOf(txtEmail.getText());
+                        password=String.valueOf(txtPassword.getText());
+
+                        if(TextUtils.isEmpty(email)){
+                            Toast.makeText(LoginActivity.this, "Enter email",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        if(TextUtils.isEmpty(password)){
+                            Toast.makeText(LoginActivity.this, "Enter password",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        mAuth.signInWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(getApplicationContext(),DashboardActivity.class);
+                                            startActivity(intent);
+                                            finish();
+                                        } else {
+                                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                                                    Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+
+                    }
+                });
+
             }
         });
-        txtphoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-            @Override
-            public void onFocusChange(View v, boolean hasFocus){
-                if(!hasFocus){
-                    hideKeyboard(v);
-                }
-            }
-        });
+//        txtphoneNumber.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus){
+//                if(!hasFocus){
+//                    hideKeyboard(v);
+//                }
+//            }
+//        });
 
     }
 
@@ -106,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String phoneNumber = txtphoneNumber.getText().toString().trim();
+            String phoneNumber = txtEmail.getText().toString().trim();
 
             btnGetOTP.setEnabled(!phoneNumber.isEmpty() && phoneNumber.length() == 9);
         }
@@ -127,7 +143,7 @@ public class LoginActivity extends AppCompatActivity {
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
     public void openConfirmOTPPage(){
-        Intent intent = new Intent(LoginActivity.this, ConfirmOTPActivity.class);
+        Intent intent = new Intent(LoginActivity.this, EnterPasswordActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }

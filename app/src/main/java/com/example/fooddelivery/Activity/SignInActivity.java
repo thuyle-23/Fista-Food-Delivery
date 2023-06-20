@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.fooddelivery.R;
 
 public class SignInActivity extends AppCompatActivity {
-    private TextView txtPhoneNumber;
+    private TextView txtPhoneNumber, txtPhoneNumber1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,9 +23,20 @@ public class SignInActivity extends AppCompatActivity {
                 openLoginPage();
             }
         });
+        txtPhoneNumber1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openEnterPasswordPage();
+            }
+        });
     }
     public void openLoginPage(){
         Intent intent = new Intent(SignInActivity.this, LoginActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+    public void openEnterPasswordPage(){
+        Intent intent = new Intent(SignInActivity.this, EnterPasswordActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }

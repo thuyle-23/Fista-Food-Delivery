@@ -35,7 +35,7 @@
             android:name=".Activity.RatingRestaurantActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Welcome"
+            android:name=".Activity.SearchFoodActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.SearchPageActivity"
@@ -50,7 +50,7 @@
             android:name=".Activity.PaymentMethodsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.PersonalAccountActivity"
+            android:name=".Activity.SignInActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.UpdateOrderActivity"
@@ -73,7 +73,7 @@
             android:name=".Activity.OrdersTypeActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SignInActivity"
+            android:name=".Activity.PersonalAccountActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.StoreInformationActivity"
@@ -111,7 +111,7 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Activity.SearchFoodActivity"
+            android:name=".Activity.Welcome"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
