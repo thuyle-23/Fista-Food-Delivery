@@ -75,11 +75,11 @@ public class LoginActivity extends AppCompatActivity {
                         password=String.valueOf(txtPassword.getText());
 
                         if(TextUtils.isEmpty(email)){
-                            Toast.makeText(LoginActivity.this, "Enter email",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Vui lòng nhập địa chỉ email",Toast.LENGTH_SHORT).show();
                             return;
                         }
                         if(TextUtils.isEmpty(password)){
-                            Toast.makeText(LoginActivity.this, "Enter password",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Vui lòng nhập mật khẩu",Toast.LENGTH_SHORT).show();
                             return;
                         }
                         mAuth.signInWithEmailAndPassword(email, password)
@@ -114,34 +114,16 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private TextWatcher loginTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String phoneNumber = txtEmail.getText().toString().trim();
-
-            btnGetOTP.setEnabled(!phoneNumber.isEmpty() && phoneNumber.length() == 9);
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    };
 
     public void backToSignInPage() {
         Intent intent = new Intent(LoginActivity.this, SignInActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_out_right, R.anim.slide_in_left);
     }
-    public void hideKeyboard(View view){
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-    }
+//    public void hideKeyboard(View view){
+//        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+//        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+//    }
     public void openConfirmOTPPage(){
         Intent intent = new Intent(LoginActivity.this, EnterPasswordActivity.class);
         startActivity(intent);

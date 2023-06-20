@@ -116,7 +116,6 @@
                     android:background="@null"
                     android:fontFamily="@font/inter_medium"
                     android:hint="Mật khẩu"
-                    android:inputType="number"
                     android:paddingLeft="5dp"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -145,7 +144,6 @@
             android:layout_marginBottom="10dp"
             android:layout_alignParentBottom="true"
             android:backgroundTint="@color/mainPurple"
-            android:enabled="false"
             android:fontFamily="@font/inter_bold"
             android:text="ĐĂNG NHẬP"
             android:textSize="16sp"

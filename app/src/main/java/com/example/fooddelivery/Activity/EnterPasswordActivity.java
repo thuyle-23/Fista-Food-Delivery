@@ -62,11 +62,11 @@ public class EnterPasswordActivity extends AppCompatActivity {
                 password=String.valueOf(txtPassword.getText());
 
                 if(TextUtils.isEmpty(email)){
-                    Toast.makeText(EnterPasswordActivity.this, "Enter email",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EnterPasswordActivity.this, "Vui lòng nhập địa chỉ email",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(password)){
-                    Toast.makeText(EnterPasswordActivity.this, "Enter password",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EnterPasswordActivity.this, "Vui lòng nhập mật khẩu.",Toast.LENGTH_SHORT).show();
                     return;
                 }
                 mAuth.createUserWithEmailAndPassword(email, password)
@@ -74,12 +74,12 @@ public class EnterPasswordActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(EnterPasswordActivity.this, "Account created.",
+                                    Toast.makeText(EnterPasswordActivity.this, "Tạo tài khoản thành công.",
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(EnterPasswordActivity.this, "Authentication failed.",
+                                    Toast.makeText(EnterPasswordActivity.this, "Xác thực người dùng thất bại.",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }

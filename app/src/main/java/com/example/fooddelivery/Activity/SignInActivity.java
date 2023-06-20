@@ -17,6 +17,7 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.layout_sign_in);
 
         txtPhoneNumber = (TextView) findViewById(R.id.txtPhoneNumber);
+        txtPhoneNumber1 = (TextView) findViewById(R.id.txtPhoneNumber1);
         txtPhoneNumber.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
